@@ -1,0 +1,80 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(45deg, #ff4b2b, #ff416c, #ff6347, #ff8c00);
+    background-size: 300% 300%;
+    animation: gradientAnimation 7s ease infinite;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.typed-text {
+    font-size: 2em;
+    color: white;
+    white-space: pre-wrap; /* Permette al testo di andare a capo e preservare gli spazi */
+    border-right: 3px solid white;
+    display: inline-block;
+    overflow: hidden;
+    margin-bottom: 20px; /* Spazio tra testo e bottone */
+}
+
+.next-btn {
+    margin-top: auto;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    background-color: #ff6347;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.next-btn:hover {
+    background-color: #ff416c;
+}
+
+/* Animazioni */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes blink {
+    from, to { border-color: transparent; }
+    50% { border-color: white; }
+}
+
+/* Stili Responsive */
+@media (max-width: 768px) {
+    .typed-text {
+        font-size: 1.5em;
+    }
+}
+
+@media (max-width: 480px) {
+    .typed-text {
+        font-size: 1.2em;
+    }
+
+    .next-btn {
+        font-size: 1em;
+        padding: 8px 16px;
+    }
+}
